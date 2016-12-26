@@ -1,5 +1,7 @@
 package com.example.justin.myapplication;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -14,5 +16,5 @@ public interface APIService {
     Observable<Part> getProduct(@Path("id") String id);
 
     @GET("products")
-    Observable<List<Part>> getProducts();
+    Observable<ArrayList<HashMap<String,String>>> getProducts();
 }

@@ -1,5 +1,7 @@
 package com.example.justin.myapplication;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,5 +11,5 @@ import java.util.List;
 public interface PartWatcher {
     public void setPart(Part part);
 
-    public void setParts(List<Part> part);
+    public void setPartList(ArrayList<HashMap<String,String>> part);
 }

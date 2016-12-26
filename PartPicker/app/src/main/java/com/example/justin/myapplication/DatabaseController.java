@@ -20,11 +20,11 @@ import rx.schedulers.Schedulers;
  */
 
 public class DatabaseController {
-    String test = "http://productdb.dev/";
+    String test = "http://10.0.2.2:8888";
     String dev = "https://partsdb.herokuapp.com/";
     APIService restService;
     DatabaseController(){
-        restService = new Retrofit.Builder().baseUrl(dev).addConverterFactory(GsonConverterFactory.create())
+        restService = new Retrofit.Builder().baseUrl(test).addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build().create(APIService.class);
     }

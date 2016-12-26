@@ -5,6 +5,7 @@ import android.provider.ContactsContract;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import rx.Observable;
 import rx.Observer;
@@ -24,7 +25,7 @@ public class PartsController {
         database = new DatabaseController().getService();
     }
 
-    public void getParts(String id) {
+    public void getPart(String id) {
         database.getProduct(id)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -42,6 +43,29 @@ public class PartsController {
                     @Override
                     public void onNext(Part part) {
                         activity.setPart(part);
+                    }
+                });
+    }
+
+    public void getAllParts(){
+        database.getProducts()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ArrayList<HashMap<String,String>>>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        System.out.println(e.toString());
+                    }
+
+                    @Override
+                    public void onNext(ArrayList<HashMap<String,String>> parts) {
+                        System.out.println(parts);
+                        activity.setPartList(parts);
                     }
                 });
     }
