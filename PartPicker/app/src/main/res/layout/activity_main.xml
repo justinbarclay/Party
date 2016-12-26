@@ -19,6 +19,7 @@
         android:paddingTop="15dp"
         android:text="Item: " />
     <TextView
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -32,12 +33,14 @@
         android:paddingTop="15dp"
         android:text="Location: " />
     <TextView
+        android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:paddingLeft="10dp"
         android:text="Uppershelf"/>
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -45,6 +48,7 @@
         android:paddingTop="15dp"
         android:text="Count: " />
     <TextView
+        android:id="@+id/count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"

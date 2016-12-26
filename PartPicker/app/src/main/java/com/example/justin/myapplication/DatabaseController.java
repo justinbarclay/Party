@@ -29,25 +29,7 @@ public class DatabaseController {
                 .build().create(APIService.class);
     }
 
-    public void getProduct(String id){
-        restService.getProduct(id)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Part>() {
-                    @Override
-                    public void onCompleted() {
-                        System.out.println("Completed");
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        System.out.println(e.toString());
-                    }
-
-                    @Override
-                    public void onNext(Part part) {
-                        System.out.println("Part: " + part.toString());
-                    }
-                });
+    public APIService getService(){
+        return restService;
     }
 }
