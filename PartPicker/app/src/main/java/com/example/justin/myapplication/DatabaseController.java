@@ -24,7 +24,7 @@ public class DatabaseController {
     String dev = "https://partsdb.herokuapp.com/";
     APIService restService;
     DatabaseController(){
-        restService = new Retrofit.Builder().baseUrl(test).addConverterFactory(GsonConverterFactory.create())
+        restService = new Retrofit.Builder().baseUrl(dev).addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build().create(APIService.class);
     }

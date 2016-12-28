@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parts_list_view"
+    android:id="@+id/home_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -9,15 +9,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.justin.myapplication.PartsList">
+    tools:context="com.example.justin.myapplication.Home">
     <Button
-        android:id="@+id/scan"
+        android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Scan"/>
-    <ListView
-        android:id="@+id/partsList"
+        android:text="Add Part"/>
+    <Button
+        android:id="@+id/find"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:text="Find Part"/>
 </LinearLayout>

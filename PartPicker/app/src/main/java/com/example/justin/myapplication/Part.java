@@ -8,11 +8,19 @@ public class Part {
     String name;
     String location;
     String count;
+    String id;
 
     Part(String name, String location, String count){
         this.name = name;
         this.location = location;
         this.count = count;
+    }
+
+    Part(String name, String location, String count, String id){
+        this.name = name;
+        this.location = location;
+        this.count = count;
+        this.id = id;
     }
 
     public String getName() {

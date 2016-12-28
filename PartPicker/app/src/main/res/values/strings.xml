@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="title_activity_parts_list">PartsList</string>
+    <string name="title_activity_scanner">scanner</string>
+    <string name="title_activity_home">home</string>
+    <string name="title_activity_add_part">AddPart</string>
 </resources>

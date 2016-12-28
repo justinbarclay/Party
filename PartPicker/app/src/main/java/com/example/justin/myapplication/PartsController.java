@@ -19,10 +19,15 @@ import rx.schedulers.Schedulers;
 public class PartsController {
     PartWatcher activity;
     APIService database;
+    Message message;
 
     PartsController(PartWatcher activity){
         this.activity = activity;
         database = new DatabaseController().getService();
+    }
+
+    PartsController(Message activity){
+        this.message = message;
     }
 
     public void getPart(String id) {
@@ -66,6 +71,29 @@ public class PartsController {
                     public void onNext(ArrayList<HashMap<String,String>> parts) {
                         System.out.println(parts);
                         activity.setPartList(parts);
+                    }
+                });
+    }
+
+    public void savePart(Part part){
+        database.saveProduct(part)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<HashMap<String, String>>(){
+
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        System.out.print(e);
+                    }
+
+                    @Override
+                    public void onNext(HashMap<String, String> stringStringHashMap) {
+
                     }
                 });
     }
