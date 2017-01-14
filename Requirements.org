@@ -1,0 +1,50 @@
+* Data to track:
+
+** Part
+- Amount 
+- Room and shelf number.
+- Unit numbers it can be used for/has been used for
+- Part history
+- part cost
+
+** Part history
+- The date and time that it arrived.
+- The date and time it was used
+- who requested the part
+- who signed it in
+- where it came from
+- who delivered it
+- who checked it out
+- price per unit
+
+** Work Order
+- collection of parts numbers
+- collection of equipment numbers
+- date in and date completed
+
+** Equipment numbers
+- list of parts waiting to be installed
+- list of parts that have been installed
+* Features:
+- Users should be able to log in and out of the systems
+- I should be able to scan in QR code
+- When I scan a QR code I should be able to select whether I am scanning in or scanning out a part
+- When I scan in a part I should have to enter the amount I am scanning in and how what unit number the part is for
+- When I scan out a part I need to specify for what work order, unit number, and how many I am scanning out
+- I want to be able to search on part number
+- I want to be able to search by equipment number and see a list of parts waiting to be installed
+- When scanning out a part number a unit number and a work order number must be entered
+- When the stock gets to a certain level it should send out an email about current quantity
+- Any time a part is on screen I want to be able to tap it and be shown it's location and stock count
+- When I search by part number I want to be able to see that part's history (last bought, previous price, location purchased from, what equipment numbers it's been in
+- When I sign in a part it should ask who requested the part
+- When a part is signed in it should email the person letting them know that the part's arrived
+- I want to be able to track the current value of the inventory I have on hand based on all the prices of parts
+* Questions:
+- How do users get registered?
+- Why must a unit number and a work number be entered when scanning out?
+- Does a work order contain multiple equipment numbers?
+- How are you entering work orders?
+- So far none of this mentions being able to manage any of this information outside of the app. Is that something you want to talk about once we have made a progress on an alpha product?
+- How do you want to print QR codes? Do you want to print them as stickers? Sheets of paper and then laminate them?
+  
