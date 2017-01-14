@@ -19,5 +19,5 @@ public interface APIService {
     Observable<ArrayList<HashMap<String,String>>> getProducts();
 
     @POST("products")
-    Observable<HashMap<String, String>> saveProduct(@Body Part part);
+    Observable<HashMap<String, String>> savePart(@Body HashMap<String, Part> part);
 }

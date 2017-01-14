@@ -27,7 +27,8 @@ public class PartsController {
     }
 
     PartsController(Message activity){
-        this.message = message;
+        this.message = activity;
+        database = new DatabaseController().getService();
     }
 
     public void getPart(String id) {
@@ -76,7 +77,9 @@ public class PartsController {
     }
 
     public void savePart(Part part){
-        database.saveProduct(part)
+        HashMap<String, Part> toJson =  new HashMap<>();
+        toJson.put("product", part);
+        database.savePart(toJson)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<HashMap<String, String>>(){
@@ -88,12 +91,14 @@ public class PartsController {
 
                     @Override
                     public void onError(Throwable e) {
-                        System.out.print(e);
+                        System.out.print(e.toString());
                     }
 
                     @Override
-                    public void onNext(HashMap<String, String> stringStringHashMap) {
-
+                    public void onNext(HashMap<String, String> success) {
+                        if(success.get("id") != null){
+                            message.message("Success", true);
+                        }
                     }
                 });
     }

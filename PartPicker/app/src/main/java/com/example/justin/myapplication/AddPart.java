@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddPart extends Activity implements Message {
     private Button save;
@@ -33,11 +34,16 @@ public class AddPart extends Activity implements Message {
         EditText count = (EditText) findViewById(R.id.count);
 
         Part part = new Part(name.getText().toString(), location.getText().toString(), count.getText().toString());
+        System.out.println(part.toString());
         api.savePart(part);
     }
 
     public void message(String successMessage,Boolean success ){
-        System.out.println(successMessage + " " + success);
+        if(success) {
+            Toast.makeText(this, "Part added", Toast.LENGTH_LONG).show();
+        } else{
+            Toast.makeText(this, "There was an error adding the part", Toast.LENGTH_LONG).show();
+        }
     }
 
 }
